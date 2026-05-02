@@ -1,0 +1,42 @@
+/* STAGE 1: Mild */
+html.stage-1 * {
+    font-family: "Comic Sans MS", cursive !important;
+    color: #00ff00 !important;
+}
+
+/* STAGE 2: Chaos */
+html.stage-2 body {
+    animation: rainbow-bg 0.3s infinite !important;
+}
+html.stage-2 {
+    transform: rotate(0.5deg) !important;
+}
+
+@keyframes rainbow-bg {
+    0% { background-color: #ff0000 !important; }
+    50% { background-color: #0000ff !important; }
+    100% { background-color: #ff0000 !important; }
+}
+
+/* Ensure the masks we created in JS also freak out */
+html.stage-2 div[style*="background-image"] {
+    animation: drift 3s infinite alternate ease-in-out !important;
+}
+
+/* STAGE 3: Full Meltdown (Triggered at Rizz 0) */
+html.stage-3 {
+    filter: invert(1) hue-rotate(180deg) blur(1px) !important;
+}
+html.stage-3 * {
+    animation: jitter 0.1s infinite !important;
+}
+
+html.stage-3 div[style*="background-image"] {
+    animation: jitter 0.1s infinite !important;
+}
+
+@keyframes jitter {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(5px, -5px); }
+    100% { transform: translate(-5px, 5px); }
+}
