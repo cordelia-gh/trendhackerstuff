@@ -1,7 +1,4 @@
 // Reliable URLs (Wikimedia is usually not blocked by CSP)
-const SKIBIDI_URL = "https://m.media-amazon.com/images/M/MV5BMzgzMzY2MmMtMWNkNy00ZjVkLWIxOWUtZDJjODNmY2IyOWFiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"; 
-const RACOON_URL = "https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNm96Z3pndnR6Z3pndnR6Z3pndnR6Z3pndnR6Z3pndnR6Z3pndnZ6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/v0ok8uhZvw3yE/giphy.gif";
-
 const STAGE_1_DELAY = 5000;
 const STAGE_2_DELAY = 5000;
 
