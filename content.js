@@ -54,7 +54,6 @@ function triggerMeltdown() {
     }
 }
 
-// ... (Keep your infectImages() and playCursedSound() functions here) ...
 function infectImages() {
     const runInfection = () => {
         // Target standard images
@@ -101,5 +100,20 @@ function playCursedSound() {
     const audio = new Audio(audioUrl);
     audio.volume = 1.0;
     audio.loop = true;
-    audio.play().catch(e => console.log("Click the page to hear the rot!", e));
+
+    // Try to play immediately
+    audio.play().catch(() => {
+        console.log("🔊 Audio blocked. Waiting for user interaction...");
+        
+        // Add a one-time listener to the whole page
+        const startOnInteraction = () => {
+            audio.play();
+            // Remove the listener so it doesn't keep firing
+            document.removeEventListener('click', startOnInteraction);
+            document.removeEventListener('keydown', startOnInteraction);
+        };
+
+        document.addEventListener('click', startOnInteraction);
+        document.addEventListener('keydown', startOnInteraction);
+    });
 }
