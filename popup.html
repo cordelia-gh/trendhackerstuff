@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { width: 220px; padding: 15px; background: #111; color: #0f0; font-family: sans-serif; }
+        h3 { margin-top: 0; color: #f0f; font-size: 14px; text-transform: uppercase; }
+        .view { display: none; }
+        #setup-view { display: block; } /* Show setup by default */
+        input[type=range] { width: 100%; cursor: pointer; margin: 15px 0; }
+        button { width: 100%; padding: 10px; font-weight: bold; cursor: pointer; border: none; border-radius: 4px; }
+        #startBtn { background: #0f0; color: #000; }
+        #stopBtn { background: #444; color: #fff; margin-top: 10px; }
+        #countdown { font-size: 32px; font-family: monospace; text-align: center; margin: 15px 0; color: #f00; }
+    </style>
+</head>
+<body>
+    <div id="setup-view" class="view">
+        <h3>Skibidi Shield</h3>
+        <label>Lockout: <span id="val">10</span> mins</label>
+        <input type="range" id="duration" min="1" max="60" value="10">
+        <button id="startBtn">ACTIVATE BRAINROT</button>
+    </div>
+
+    <div id="active-view" class="view">
+        <h3>Focusing...</h3>
+        <div id="countdown">00:00</div>
+        <button id="stopBtn">I GIVE UP (RESET)</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
