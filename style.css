@@ -1,0 +1,94 @@
+/* STAGE 1: Mild */
+html.stage-1 * {
+    font-family: "Comic Sans MS", cursive !important;
+    color: #00ff00 !important;
+}
+
+/* Red warning flash. Kept lightweight to reduce lag. */
+html.stage-2 body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: red;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.10;
+    animation: rainbow-flash 0.7s infinite !important;
+}
+
+/* GIF covers use CSS background instead of <img>, preventing broken image icons
+   and helping GIFs fill thumbnails/videos like Shorts. */
+.brainrot-thumb-cover,
+.brainrot-video-cover {
+    background-size: contain !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    image-rendering: auto !important;
+    filter: none !important;
+    animation: none !important;
+    transform: translateZ(0) !important;
+    backface-visibility: hidden !important;
+    contain: layout paint style !important;
+    overflow: hidden !important;
+    background-color: black !important;
+    background-origin: content-box !important;
+    background-clip: border-box !important;
+}
+
+/* Thumbnail/profile overlay: fills only the thumbnail/avatar frame. */
+.brainrot-thumb-cover {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 2147483636 !important;
+    pointer-events: none !important;
+    border-radius: inherit !important;
+}
+
+/* Avatar overlays should stay round if the original frame is round. */
+.brainrot-avatar-cover {
+    border-radius: 9999px !important;
+}
+
+/* Video overlay: fixed to the actual visible video rectangle, not the whole page. */
+.brainrot-video-cover {
+    position: fixed !important;
+    z-index: 2147483638 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    will-change: top, left, width, height !important;
+}
+
+#shame-banner {
+    filter: none !important;
+    backface-visibility: hidden !important;
+    transform: translateZ(0) !important;
+    animation: banner-jitter 0.18s infinite !important;
+}
+
+@keyframes rainbow-flash {
+    0% { background-color: #ff0000; }
+    33% { background-color: #00ff00; }
+    66% { background-color: #0000ff; }
+    100% { background-color: #ff0000; }
+}
+
+@keyframes banner-jitter {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(-1px, -1px); }
+    75% { transform: translate(1px, -1px); }
+    100% { transform: translate(-1px, 1px); }
+}
+
+
+#brainrot-lockin-timer,
+#brainrot-lockin-timer * {
+    animation: none !important;
+    filter: none !important;
+}
