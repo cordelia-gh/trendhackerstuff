@@ -1,2 +1,0 @@
-# TrendHacker Skibidi Shield
-
